@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisp</title>
+    <link rel="stylesheet" href="\stylesheets\email_style.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header-left">
+            <div class="logo">wisp.</div>
+        </div>
+        <div class="header-right">
+           
+            <button class="header-btn" onclick="window.location.href='/logout'">
+                LOGOUT
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        <nav class="sidebar">
+            <div class="sidebar-item"  onclick="window.location.href = '/dashboard'">
+                <div class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-view-list" viewBox="0 0 16 16">
+  <path d="M3 4.5h10a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2m0 1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1zM1 2a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 2m0 12a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 14"/>
+</svg></div>
+                <span>Dashboard</span>
+            </div>
+            <div class="sidebar-item active" onclick="window.location.href = '/email'">
+                <div class="sidebar-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mailbox" viewBox="0 0 16 16">
+  <path d="M4 4a3 3 0 0 0-3 3v6h6V7a3 3 0 0 0-3-3m0-1h8a4 4 0 0 1 4 4v6a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V7a4 4 0 0 1 4-4m2.646 1A4 4 0 0 1 8 7v6h7V7a3 3 0 0 0-3-3z"/>
+  <path d="M11.793 8.5H9v-1h5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.354-.146zM5 7c0 .552-.448 0-1 0s-1 .552-1 0a1 1 0 0 1 2 0"/>
+</svg></div>
+                <span>Mail Service</span>
+            </div>
+    
+            
+        </nav>
+
+   
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <main class="main-content">
+            <div class="breadcrumb" onclick="window.location.href = '/dashboard'" style="cursor: pointer;">Dashboard</div>
+            
+            <div class="page-header">
+                <h1 class="page-title">Mail Service</h1>
+                <button class="create-btn" onclick="window.location.href='/email/create'">
+                    <span style="display: flex; justify-content: center; font-family: Montserrat;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
+  <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001m-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708z"/>
+</svg> </span>
+                    Create Service
+                </button>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Total Services</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Active Services</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Paused Services</div>
+                </div>
+                <!-- <div class="stat-card">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Total ex</div>
+                </div> -->
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Services</h2>
+                <div class="events-table-container">
+                    <table class="events-table">
+                        <thead>
+                            <tr>
+                                <th>Service</th>
+                                <th>Status</th>
+                                <th>Last Execution</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+                           
+                            <!-- <tr>
+                                <td>
+                                    <div class="event-status">
+                                        <div class="status-icon">✓</div>
+                                        <div class="event-details">
+                                            <div class="event-title">Cronjob execution: Successful (200 OK)</div>
+                                            <div class="event-url">http://www.google.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="event-date">Today at 12:52:02 PM</td>
+                                <td>
+                                    <button class="actions-btn">⋮ Details</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="event-status">
+                                        <div class="status-icon">✓</div>
+                                        <div class="event-details">
+                                            <div class="event-title">Cronjob execution: Successful (200 OK)</div>
+                                            <div class="event-url">http://www.google.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="event-date">Today at 12:51:01 PM</td>
+                                <td>
+                                    <button class="actions-btn">⋮ Details</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="event-status">
+                                        <div class="status-icon">✓</div>
+                                        <div class="event-details">
+                                            <div class="event-title">Cronjob execution: Successful (200 OK)</div>
+                                            <div class="event-url">http://www.google.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="event-date">Today at 12:51:01 PM</td>
+                                <td>
+                                    <button class="actions-btn">⋮ Details</button>
+                                    <button class="actions-btn">⋮ Details</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="event-status">
+                                        <div class="status-icon">✓</div>
+                                        <div class="event-details">
+                                            <div class="event-title">Cronjob execution: Successful (200 OK)</div>
+                                            <div class="event-url">http://www.google.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="event-date">Today at 12:51:01 PM</td>
+                                <td>
+                                    <button class="actions-btn">⋮ Details</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="event-status">
+                                        <div class="status-icon">✓</div>
+                                        <div class="event-details">
+                                            <div class="event-title">Cronjob execution: Successful (200 OK)</div>
+                                            <div class="event-url">http://www.google.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="event-date">Today at 12:51:01 PM</td>
+                                <td>
+                                    <button class="actions-btn">⋮ Details</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="event-status">
+                                        <div class="status-icon">✓</div>
+                                        <div class="event-details">
+                                            <div class="event-title">Cronjob execution: Successful (200 OK)</div>
+                                            <div class="event-url">http://www.google.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="event-date">Today at 12:51:01 PM</td>
+                                <td>
+                                    <button class="actions-btn">⋮ Details</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="event-status">
+                                        <div class="status-icon">✓</div>
+                                        <div class="event-details">
+                                            <div class="event-title">Cronjob execution: Successful (200 OK)</div>
+                                            <div class="event-url">http://www.google.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="event-date">Today at 12:50:05 PM</td>
+                                <td>
+                                    <button class="actions-btn">⋮ Details</button>
+                                </td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="section">
+                <h2 class="section-title">Do you find wisp useful?</h2>
+                <p class="membership-text">
+                    Never miss a beat with wisp. From sending daily summaries to hourly check-ins, wisp helps automate repetitive tasks so you can focus on what matters most. It’s reliable, simple to set up, and runs in the background — just like a good assistant should.
+                </p>
+                <!-- <button class="learn-more-btn">
+                    <span class="tag-icon"></span>
+                    Learn More
+                </button> -->
+            </div>
+        </main>
+    </div>
+
+    <script src="\javascripts\email.js"></script>
+</body>
+</html>
